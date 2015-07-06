@@ -1,0 +1,897 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'noble' ]
+2 info using npm@2.11.2
+3 info using node@v0.12.6
+4 verbose install initial load of /Users/hectormorlet/Documents/Electron/Gyromin/package.json
+5 warn package.json your-app@0.1.0 No repository field.
+6 warn package.json your-app@0.1.0 No license field.
+7 verbose installManyTop reading scoped package data from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/package.json
+8 info package.json noble@1.0.1 No license field.
+9 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/package.json
+10 verbose install noble is installed as 1.0.1
+11 silly cache add args [ 'noble', null ]
+12 verbose cache add spec noble
+13 silly cache add parsed spec { raw: 'noble',
+13 silly cache add   scope: null,
+13 silly cache add   name: 'noble',
+13 silly cache add   rawSpec: '',
+13 silly cache add   spec: '*',
+13 silly cache add   type: 'range' }
+14 silly addNamed noble@*
+15 verbose addNamed "*" is a valid semver range for noble
+16 silly addNameRange { name: 'noble', range: '*', hasData: false }
+17 silly mapToRegistry name noble
+18 silly mapToRegistry using default registry
+19 silly mapToRegistry registry https://registry.npmjs.org/
+20 silly mapToRegistry uri https://registry.npmjs.org/noble
+21 verbose addNameRange registry:https://registry.npmjs.org/noble not in flight; fetching
+22 verbose request uri https://registry.npmjs.org/noble
+23 verbose request no auth needed
+24 info attempt registry request try #1 at 1:58:02 PM
+25 verbose request id 2bcaad61ba272c0e
+26 verbose etag "9MTJNEXOY54K1YINTNNSBKBJC"
+27 http request GET https://registry.npmjs.org/noble
+28 http 304 https://registry.npmjs.org/noble
+29 silly get cb [ 304,
+29 silly get   { date: 'Mon, 06 Jul 2015 05:58:02 GMT',
+29 silly get     via: '1.1 varnish',
+29 silly get     'cache-control': 'max-age=60',
+29 silly get     etag: '"9MTJNEXOY54K1YINTNNSBKBJC"',
+29 silly get     age: '0',
+29 silly get     connection: 'keep-alive',
+29 silly get     'x-served-by': 'cache-mel6520-MEL',
+29 silly get     'x-cache': 'HIT',
+29 silly get     'x-cache-hits': '1',
+29 silly get     'x-timer': 'S1436162282.854395,VS0,VE240',
+29 silly get     vary: 'Accept' } ]
+30 verbose etag https://registry.npmjs.org/noble from cache
+31 verbose get saving noble to /Users/hectormorlet/.npm/registry.npmjs.org/noble/.cache.json
+32 silly addNameRange number 2 { name: 'noble', range: '*', hasData: true }
+33 silly addNameRange versions [ 'noble',
+33 silly addNameRange   [ '0.0.1',
+33 silly addNameRange     '0.0.2',
+33 silly addNameRange     '0.0.3',
+33 silly addNameRange     '0.0.4',
+33 silly addNameRange     '0.0.5',
+33 silly addNameRange     '0.1.0',
+33 silly addNameRange     '0.1.1',
+33 silly addNameRange     '0.1.2',
+33 silly addNameRange     '0.1.3',
+33 silly addNameRange     '0.1.4',
+33 silly addNameRange     '0.2.0',
+33 silly addNameRange     '0.2.1',
+33 silly addNameRange     '0.2.2',
+33 silly addNameRange     '0.2.3',
+33 silly addNameRange     '0.2.4',
+33 silly addNameRange     '0.2.5',
+33 silly addNameRange     '0.2.6',
+33 silly addNameRange     '0.2.7',
+33 silly addNameRange     '0.2.8',
+33 silly addNameRange     '0.3.0',
+33 silly addNameRange     '0.3.1',
+33 silly addNameRange     '0.3.3',
+33 silly addNameRange     '0.3.4',
+33 silly addNameRange     '0.3.5',
+33 silly addNameRange     '0.3.6',
+33 silly addNameRange     '0.3.7',
+33 silly addNameRange     '0.3.8',
+33 silly addNameRange     '0.3.9',
+33 silly addNameRange     '0.3.10',
+33 silly addNameRange     '0.3.11',
+33 silly addNameRange     '0.3.12',
+33 silly addNameRange     '0.3.13',
+33 silly addNameRange     '0.3.14',
+33 silly addNameRange     '1.0.0',
+33 silly addNameRange     '1.0.1' ] ]
+34 silly addNamed noble@1.0.1
+35 verbose addNamed "1.0.1" is a plain semver version for noble
+36 silly cache afterAdd noble@1.0.1
+37 verbose afterAdd /Users/hectormorlet/.npm/noble/1.0.1/package/package.json not in flight; writing
+38 verbose afterAdd /Users/hectormorlet/.npm/noble/1.0.1/package/package.json written
+39 silly install resolved [ { author: { name: 'Sandeep Mistry', email: 'sandeep.mistry@gmail.com' },
+39 silly install resolved     name: 'noble',
+39 silly install resolved     description: 'A node.js BLE (Bluetooth low energy) central library.',
+39 silly install resolved     version: '1.0.1',
+39 silly install resolved     repository:
+39 silly install resolved      { type: 'git',
+39 silly install resolved        url: 'git+https://github.com/sandeepmistry/noble.git' },
+39 silly install resolved     bugs: { url: 'https://github.com/sandeepmistry/noble/issues' },
+39 silly install resolved     keywords:
+39 silly install resolved      [ 'bluetooth',
+39 silly install resolved        'BLE',
+39 silly install resolved        'bluetooth low energy',
+39 silly install resolved        'bluetooth smart',
+39 silly install resolved        'central' ],
+39 silly install resolved     main: './index.js',
+39 silly install resolved     engines: { node: '>=0.8' },
+39 silly install resolved     os: [ 'darwin', 'linux' ],
+39 silly install resolved     dependencies:
+39 silly install resolved      { debug: '~2.2.0',
+39 silly install resolved        'bplist-parser': '0.0.6',
+39 silly install resolved        'xpc-connection': '~0.1.3' },
+39 silly install resolved     optionalDependencies: { 'bplist-parser': '0.0.6', 'xpc-connection': '~0.1.3' },
+39 silly install resolved     devDependencies:
+39 silly install resolved      { jshint: 'latest',
+39 silly install resolved        mocha: '~1.8.2',
+39 silly install resolved        should: '~1.2.2',
+39 silly install resolved        sinon: '~1.6.0',
+39 silly install resolved        async: '~0.2.9',
+39 silly install resolved        ws: '~0.4.31' },
+39 silly install resolved     scripts:
+39 silly install resolved      { pretest: 'jshint *.js lib/. test/.',
+39 silly install resolved        test: 'mocha -R spec test/*.js',
+39 silly install resolved        install: 'node-gyp rebuild' },
+39 silly install resolved     browser:
+39 silly install resolved      { './distributed/bindings': false,
+39 silly install resolved        './mac/bindings': false,
+39 silly install resolved        './linux/bindings': false },
+39 silly install resolved     gypfile: true,
+39 silly install resolved     gitHead: '774d86e93e9dd438c1abf7d7c2f02f20084e881f',
+39 silly install resolved     homepage: 'https://github.com/sandeepmistry/noble',
+39 silly install resolved     _id: 'noble@1.0.1',
+39 silly install resolved     _shasum: 'ca08083bac4968089c9729c6e0093a59144cd619',
+39 silly install resolved     _from: 'noble@*',
+39 silly install resolved     _npmVersion: '1.4.21',
+39 silly install resolved     _npmUser: { name: 'sandeepmistry', email: 'sandeep.mistry@gmail.com' },
+39 silly install resolved     maintainers: [ [Object] ],
+39 silly install resolved     dist:
+39 silly install resolved      { shasum: 'ca08083bac4968089c9729c6e0093a59144cd619',
+39 silly install resolved        tarball: 'http://registry.npmjs.org/noble/-/noble-1.0.1.tgz' },
+39 silly install resolved     directories: {},
+39 silly install resolved     _resolved: 'https://registry.npmjs.org/noble/-/noble-1.0.1.tgz',
+39 silly install resolved     readme: 'ERROR: No README data found!' } ]
+40 info install noble@1.0.1 into /Users/hectormorlet/Documents/Electron/Gyromin
+41 info installOne noble@1.0.1
+42 verbose installOne of noble to /Users/hectormorlet/Documents/Electron/Gyromin not in flight; installing
+43 verbose lock using /Users/hectormorlet/.npm/_locks/noble-62a4f3939d2eb35b.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+44 silly install write writing noble 1.0.1 to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+45 verbose unbuild node_modules/noble
+46 info preuninstall noble@1.0.1
+47 info uninstall noble@1.0.1
+48 verbose unbuild rmStuff noble@1.0.1 from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules
+49 info postuninstall noble@1.0.1
+50 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble is being purged from base /Users/hectormorlet/Documents/Electron/Gyromin
+51 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+52 silly vacuum-fs purging /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+53 silly vacuum-fs removing /Users/hectormorlet/Documents/Electron/Gyromin/node_modules
+54 silly vacuum-fs finished vacuuming up to /Users/hectormorlet/Documents/Electron/Gyromin
+55 verbose tar unpack /Users/hectormorlet/.npm/noble/1.0.1/package.tgz
+56 verbose tar unpacking to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+57 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble is being purged
+58 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+59 silly gunzTarPerm modes [ '755', '644' ]
+60 silly gunzTarPerm extractEntry package.json
+61 silly gunzTarPerm extractEntry .npmignore
+62 silly gunzTarPerm extractEntry README.md
+63 silly gunzTarPerm extractEntry LICENSE
+64 silly gunzTarPerm extractEntry test.js
+65 silly gunzTarPerm extractEntry index.js
+66 silly gunzTarPerm extractEntry ws-slave.js
+67 silly gunzTarPerm extractEntry CHANGELOG.md
+68 silly gunzTarPerm extractEntry examples/advertisement-discovery.js
+69 silly gunzTarPerm extractEntry examples/enter-exit.js
+70 silly gunzTarPerm extractEntry examples/peripheral-explorer.js
+71 silly gunzTarPerm extractEntry examples/pizza/README.md
+72 silly gunzTarPerm extractEntry examples/pizza/central.js
+73 silly gunzTarPerm extractEntry examples/pizza/pizza.js
+74 silly gunzTarPerm extractEntry src/README.md
+75 silly gunzTarPerm extractEntry src/hci-ble.c
+76 silly gunzTarPerm extractEntry src/l2cap-ble.c
+77 silly gunzTarPerm extractEntry src/utility.c
+78 silly gunzTarPerm extractEntry src/utility.h
+79 silly gunzTarPerm extractEntry test/test-characteristic.js
+80 silly gunzTarPerm extractEntry test/test-descriptor.js
+81 silly gunzTarPerm extractEntry test/test-peripheral.js
+82 silly gunzTarPerm extractEntry test/test-service.js
+83 silly gunzTarPerm extractEntry binding.gyp
+84 silly gunzTarPerm extractEntry lib/characteristic.js
+85 silly gunzTarPerm extractEntry lib/descriptor.js
+86 silly gunzTarPerm extractEntry lib/noble.js
+87 silly gunzTarPerm extractEntry lib/peripheral.js
+88 silly gunzTarPerm extractEntry lib/service.js
+89 silly gunzTarPerm extractEntry lib/linux/bindings.js
+90 silly gunzTarPerm extractEntry lib/linux/hci-ble.js
+91 silly gunzTarPerm extractEntry lib/linux/l2cap-ble.js
+92 silly gunzTarPerm extractEntry lib/characteristics.json
+93 silly gunzTarPerm extractEntry lib/websocket/bindings.js
+94 silly gunzTarPerm extractEntry lib/descriptors.json
+95 silly gunzTarPerm extractEntry lib/distributed/bindings.js
+96 silly gunzTarPerm extractEntry lib/services.json
+97 silly gunzTarPerm extractEntry lib/mac/bindings.js
+98 silly gunzTarPerm extractEntry lib/mac/legacy.js
+99 silly gunzTarPerm extractEntry lib/mac/mavericks.js
+100 silly gunzTarPerm extractEntry lib/mac/uuid-to-address.js
+101 silly gunzTarPerm extractEntry lib/mac/yosemite.js
+102 verbose write writing to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/package.json
+103 info preinstall noble@1.0.1
+104 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/package.json
+105 silly prepareForInstallMany adding debug@~2.2.0 from noble dependencies
+106 silly prepareForInstallMany adding bplist-parser@0.0.6 from noble dependencies
+107 silly prepareForInstallMany adding xpc-connection@~0.1.3 from noble dependencies
+108 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/package.json
+109 silly cache add args [ 'debug@~2.2.0', null ]
+110 verbose cache add spec debug@~2.2.0
+111 silly cache add args [ 'bplist-parser@0.0.6', null ]
+112 verbose cache add spec bplist-parser@0.0.6
+113 silly cache add parsed spec { raw: 'debug@~2.2.0',
+113 silly cache add   scope: null,
+113 silly cache add   name: 'debug',
+113 silly cache add   rawSpec: '~2.2.0',
+113 silly cache add   spec: '>=2.2.0 <2.3.0',
+113 silly cache add   type: 'range' }
+114 silly addNamed debug@>=2.2.0 <2.3.0
+115 verbose addNamed ">=2.2.0 <2.3.0" is a valid semver range for debug
+116 silly addNameRange { name: 'debug', range: '>=2.2.0 <2.3.0', hasData: false }
+117 silly mapToRegistry name debug
+118 silly mapToRegistry using default registry
+119 silly mapToRegistry registry https://registry.npmjs.org/
+120 silly mapToRegistry uri https://registry.npmjs.org/debug
+121 verbose addNameRange registry:https://registry.npmjs.org/debug not in flight; fetching
+122 silly cache add parsed spec { raw: 'bplist-parser@0.0.6',
+122 silly cache add   scope: null,
+122 silly cache add   name: 'bplist-parser',
+122 silly cache add   rawSpec: '0.0.6',
+122 silly cache add   spec: '0.0.6',
+122 silly cache add   type: 'version' }
+123 silly addNamed bplist-parser@0.0.6
+124 verbose addNamed "0.0.6" is a plain semver version for bplist-parser
+125 silly mapToRegistry name bplist-parser
+126 silly mapToRegistry using default registry
+127 silly mapToRegistry registry https://registry.npmjs.org/
+128 silly mapToRegistry uri https://registry.npmjs.org/bplist-parser
+129 verbose addNameVersion registry:https://registry.npmjs.org/bplist-parser not in flight; fetching
+130 silly cache add args [ 'xpc-connection@~0.1.3', null ]
+131 verbose cache add spec xpc-connection@~0.1.3
+132 silly cache add parsed spec { raw: 'xpc-connection@~0.1.3',
+132 silly cache add   scope: null,
+132 silly cache add   name: 'xpc-connection',
+132 silly cache add   rawSpec: '~0.1.3',
+132 silly cache add   spec: '>=0.1.3 <0.2.0',
+132 silly cache add   type: 'range' }
+133 silly addNamed xpc-connection@>=0.1.3 <0.2.0
+134 verbose addNamed ">=0.1.3 <0.2.0" is a valid semver range for xpc-connection
+135 silly addNameRange { name: 'xpc-connection',
+135 silly addNameRange   range: '>=0.1.3 <0.2.0',
+135 silly addNameRange   hasData: false }
+136 silly mapToRegistry name xpc-connection
+137 silly mapToRegistry using default registry
+138 silly mapToRegistry registry https://registry.npmjs.org/
+139 silly mapToRegistry uri https://registry.npmjs.org/xpc-connection
+140 verbose addNameRange registry:https://registry.npmjs.org/xpc-connection not in flight; fetching
+141 verbose request uri https://registry.npmjs.org/debug
+142 verbose request no auth needed
+143 info attempt registry request try #1 at 1:58:03 PM
+144 verbose etag "81OSLK7EJMMIA2FPVBDRX54Q2"
+145 http request GET https://registry.npmjs.org/debug
+146 verbose request uri https://registry.npmjs.org/bplist-parser
+147 verbose request no auth needed
+148 info attempt registry request try #1 at 1:58:03 PM
+149 verbose etag "93F5RZ172BWRNNELFT42PJC5P"
+150 http request GET https://registry.npmjs.org/bplist-parser
+151 verbose request uri https://registry.npmjs.org/xpc-connection
+152 verbose request no auth needed
+153 info attempt registry request try #1 at 1:58:03 PM
+154 verbose etag "71FDZ0DJUTFCU84CLFFZWJDS"
+155 http request GET https://registry.npmjs.org/xpc-connection
+156 http 304 https://registry.npmjs.org/debug
+157 silly get cb [ 304,
+157 silly get   { date: 'Mon, 06 Jul 2015 05:58:03 GMT',
+157 silly get     via: '1.1 varnish',
+157 silly get     'cache-control': 'max-age=60',
+157 silly get     etag: '"81OSLK7EJMMIA2FPVBDRX54Q2"',
+157 silly get     age: '0',
+157 silly get     connection: 'keep-alive',
+157 silly get     'x-served-by': 'cache-mel6522-MEL',
+157 silly get     'x-cache': 'HIT',
+157 silly get     'x-cache-hits': '1',
+157 silly get     'x-timer': 'S1436162283.478140,VS0,VE217',
+157 silly get     vary: 'Accept' } ]
+158 verbose etag https://registry.npmjs.org/debug from cache
+159 verbose get saving debug to /Users/hectormorlet/.npm/registry.npmjs.org/debug/.cache.json
+160 silly addNameRange number 2 { name: 'debug', range: '>=2.2.0 <2.3.0', hasData: true }
+161 silly addNameRange versions [ 'debug',
+161 silly addNameRange   [ '0.0.1',
+161 silly addNameRange     '0.1.0',
+161 silly addNameRange     '0.2.0',
+161 silly addNameRange     '0.3.0',
+161 silly addNameRange     '0.4.0',
+161 silly addNameRange     '0.4.1',
+161 silly addNameRange     '0.5.0',
+161 silly addNameRange     '0.6.0',
+161 silly addNameRange     '0.7.0',
+161 silly addNameRange     '0.7.1',
+161 silly addNameRange     '0.7.2',
+161 silly addNameRange     '0.7.3',
+161 silly addNameRange     '0.7.4',
+161 silly addNameRange     '0.8.0',
+161 silly addNameRange     '0.8.1',
+161 silly addNameRange     '1.0.0',
+161 silly addNameRange     '1.0.1',
+161 silly addNameRange     '1.0.2',
+161 silly addNameRange     '1.0.3',
+161 silly addNameRange     '1.0.4',
+161 silly addNameRange     '2.0.0',
+161 silly addNameRange     '2.1.0',
+161 silly addNameRange     '2.1.1',
+161 silly addNameRange     '2.1.2',
+161 silly addNameRange     '2.1.3',
+161 silly addNameRange     '2.2.0' ] ]
+162 silly addNamed debug@2.2.0
+163 verbose addNamed "2.2.0" is a plain semver version for debug
+164 silly cache afterAdd debug@2.2.0
+165 verbose afterAdd /Users/hectormorlet/.npm/debug/2.2.0/package/package.json not in flight; writing
+166 verbose afterAdd /Users/hectormorlet/.npm/debug/2.2.0/package/package.json written
+167 http 304 https://registry.npmjs.org/bplist-parser
+168 silly get cb [ 304,
+168 silly get   { date: 'Mon, 06 Jul 2015 05:58:03 GMT',
+168 silly get     via: '1.1 varnish',
+168 silly get     'cache-control': 'max-age=60',
+168 silly get     etag: '"93F5RZ172BWRNNELFT42PJC5P"',
+168 silly get     age: '0',
+168 silly get     connection: 'keep-alive',
+168 silly get     'x-served-by': 'cache-mel6522-MEL',
+168 silly get     'x-cache': 'HIT',
+168 silly get     'x-cache-hits': '1',
+168 silly get     'x-timer': 'S1436162283.474201,VS0,VE237',
+168 silly get     vary: 'Accept' } ]
+169 verbose etag https://registry.npmjs.org/bplist-parser from cache
+170 verbose get saving bplist-parser to /Users/hectormorlet/.npm/registry.npmjs.org/bplist-parser/.cache.json
+171 silly cache afterAdd bplist-parser@0.0.6
+172 verbose afterAdd /Users/hectormorlet/.npm/bplist-parser/0.0.6/package/package.json not in flight; writing
+173 verbose afterAdd /Users/hectormorlet/.npm/bplist-parser/0.0.6/package/package.json written
+174 http 304 https://registry.npmjs.org/xpc-connection
+175 silly get cb [ 304,
+175 silly get   { date: 'Mon, 06 Jul 2015 05:58:03 GMT',
+175 silly get     via: '1.1 varnish',
+175 silly get     'cache-control': 'max-age=60',
+175 silly get     etag: '"71FDZ0DJUTFCU84CLFFZWJDS"',
+175 silly get     age: '0',
+175 silly get     connection: 'keep-alive',
+175 silly get     'x-served-by': 'cache-mel6523-MEL',
+175 silly get     'x-cache': 'MISS',
+175 silly get     'x-cache-hits': '0',
+175 silly get     'x-timer': 'S1436162283.486477,VS0,VE953',
+175 silly get     vary: 'Accept' } ]
+176 verbose etag https://registry.npmjs.org/xpc-connection from cache
+177 verbose get saving xpc-connection to /Users/hectormorlet/.npm/registry.npmjs.org/xpc-connection/.cache.json
+178 silly addNameRange number 2 { name: 'xpc-connection',
+178 silly addNameRange   range: '>=0.1.3 <0.2.0',
+178 silly addNameRange   hasData: true }
+179 silly addNameRange versions [ 'xpc-connection',
+179 silly addNameRange   [ '0.0.1',
+179 silly addNameRange     '0.0.2',
+179 silly addNameRange     '0.0.3',
+179 silly addNameRange     '0.0.4',
+179 silly addNameRange     '0.1.0',
+179 silly addNameRange     '0.1.1',
+179 silly addNameRange     '0.1.2',
+179 silly addNameRange     '0.1.3' ] ]
+180 silly addNamed xpc-connection@0.1.3
+181 verbose addNamed "0.1.3" is a plain semver version for xpc-connection
+182 silly cache afterAdd xpc-connection@0.1.3
+183 verbose afterAdd /Users/hectormorlet/.npm/xpc-connection/0.1.3/package/package.json not in flight; writing
+184 verbose afterAdd /Users/hectormorlet/.npm/xpc-connection/0.1.3/package/package.json written
+185 silly install resolved [ { name: 'debug',
+185 silly install resolved     version: '2.2.0',
+185 silly install resolved     repository: { type: 'git', url: 'git://github.com/visionmedia/debug.git' },
+185 silly install resolved     description: 'small debugging utility',
+185 silly install resolved     keywords: [ 'debug', 'log', 'debugger' ],
+185 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+185 silly install resolved     contributors: [ [Object] ],
+185 silly install resolved     license: 'MIT',
+185 silly install resolved     dependencies: { ms: '0.7.1' },
+185 silly install resolved     devDependencies: { browserify: '9.0.3', mocha: '*' },
+185 silly install resolved     main: './node.js',
+185 silly install resolved     browser: './browser.js',
+185 silly install resolved     component: { scripts: [Object] },
+185 silly install resolved     gitHead: 'b38458422b5aa8aa6d286b10dfe427e8a67e2b35',
+185 silly install resolved     bugs: { url: 'https://github.com/visionmedia/debug/issues' },
+185 silly install resolved     homepage: 'https://github.com/visionmedia/debug',
+185 silly install resolved     _id: 'debug@2.2.0',
+185 silly install resolved     scripts: {},
+185 silly install resolved     _shasum: 'f87057e995b1a1f6ae6a4960664137bc56f039da',
+185 silly install resolved     _from: 'debug@>=2.2.0 <2.3.0',
+185 silly install resolved     _npmVersion: '2.7.4',
+185 silly install resolved     _nodeVersion: '0.12.2',
+185 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+185 silly install resolved     maintainers: [ [Object], [Object] ],
+185 silly install resolved     dist:
+185 silly install resolved      { shasum: 'f87057e995b1a1f6ae6a4960664137bc56f039da',
+185 silly install resolved        tarball: 'http://registry.npmjs.org/debug/-/debug-2.2.0.tgz' },
+185 silly install resolved     directories: {},
+185 silly install resolved     _resolved: 'https://registry.npmjs.org/debug/-/debug-2.2.0.tgz',
+185 silly install resolved     readme: 'ERROR: No README data found!' },
+185 silly install resolved   { name: 'bplist-parser',
+185 silly install resolved     version: '0.0.6',
+185 silly install resolved     description: 'Binary plist parser.',
+185 silly install resolved     main: 'bplistParser.js',
+185 silly install resolved     scripts: { test: './node_modules/nodeunit/bin/nodeunit test' },
+185 silly install resolved     keywords: [ 'bplist', 'plist', 'parser' ],
+185 silly install resolved     author: { name: 'Joe Ferner', email: 'joe.ferner@nearinfinity.com' },
+185 silly install resolved     license: 'MIT',
+185 silly install resolved     devDependencies: { nodeunit: '~0.7.4' },
+185 silly install resolved     repository:
+185 silly install resolved      { type: 'git',
+185 silly install resolved        url: 'git+https://github.com/nearinfinity/node-bplist-parser.git' },
+185 silly install resolved     gitHead: 'a2230a5df3c7014ffbe5761bcb091ea2d061b47b',
+185 silly install resolved     bugs: { url: 'https://github.com/nearinfinity/node-bplist-parser/issues' },
+185 silly install resolved     homepage: 'https://github.com/nearinfinity/node-bplist-parser',
+185 silly install resolved     _id: 'bplist-parser@0.0.6',
+185 silly install resolved     _shasum: '38da3471817df9d44ab3892e27707bbbd75a11b9',
+185 silly install resolved     _from: 'bplist-parser@0.0.6',
+185 silly install resolved     _npmVersion: '1.4.14',
+185 silly install resolved     _npmUser: { name: 'joeferner', email: 'joe@fernsroth.com' },
+185 silly install resolved     maintainers: [ [Object] ],
+185 silly install resolved     dist:
+185 silly install resolved      { shasum: '38da3471817df9d44ab3892e27707bbbd75a11b9',
+185 silly install resolved        tarball: 'http://registry.npmjs.org/bplist-parser/-/bplist-parser-0.0.6.tgz' },
+185 silly install resolved     directories: {},
+185 silly install resolved     _resolved: 'https://registry.npmjs.org/bplist-parser/-/bplist-parser-0.0.6.tgz',
+185 silly install resolved     readme: 'ERROR: No README data found!' },
+185 silly install resolved   { name: 'xpc-connection',
+185 silly install resolved     version: '0.1.3',
+185 silly install resolved     description: 'XPC Connection binding for node.js',
+185 silly install resolved     main: 'index.js',
+185 silly install resolved     scripts: { install: 'node-gyp rebuild' },
+185 silly install resolved     repository:
+185 silly install resolved      { type: 'git',
+185 silly install resolved        url: 'git+https://github.com/sandeepmistry/node-xpc-connection.git' },
+185 silly install resolved     bugs: { url: 'https://github.com/sandeepmistry/node-xpc-connection/issues' },
+185 silly install resolved     keywords: [ 'XPC', 'XPC connection' ],
+185 silly install resolved     author: { name: 'Sandeep Misty', email: 'sandeep.mistry@gmail.com' },
+185 silly install resolved     license: 'MIT',
+185 silly install resolved     engines: { node: '>=0.8' },
+185 silly install resolved     os: [ 'darwin' ],
+185 silly install resolved     dependencies: { nan: '^1.7.0' },
+185 silly install resolved     gypfile: true,
+185 silly install resolved     gitHead: 'd17805addd4e27bf89fa4bc69a1c2769decff6c4',
+185 silly install resolved     homepage: 'https://github.com/sandeepmistry/node-xpc-connection',
+185 silly install resolved     _id: 'xpc-connection@0.1.3',
+185 silly install resolved     _shasum: '4f51ff4d45d882c47657414d70248aee72981998',
+185 silly install resolved     _from: 'xpc-connection@>=0.1.3 <0.2.0',
+185 silly install resolved     _npmVersion: '1.4.21',
+185 silly install resolved     _npmUser: { name: 'sandeepmistry', email: 'sandeep.mistry@gmail.com' },
+185 silly install resolved     maintainers: [ [Object] ],
+185 silly install resolved     dist:
+185 silly install resolved      { shasum: '4f51ff4d45d882c47657414d70248aee72981998',
+185 silly install resolved        tarball: 'http://registry.npmjs.org/xpc-connection/-/xpc-connection-0.1.3.tgz' },
+185 silly install resolved     directories: {},
+185 silly install resolved     _resolved: 'https://registry.npmjs.org/xpc-connection/-/xpc-connection-0.1.3.tgz',
+185 silly install resolved     readme: 'ERROR: No README data found!' } ]
+186 info install debug@2.2.0 into /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+187 info install bplist-parser@0.0.6 into /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+188 info install xpc-connection@0.1.3 into /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+189 info installOne debug@2.2.0
+190 verbose installOne of debug to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble not in flight; installing
+191 info installOne bplist-parser@0.0.6
+192 verbose installOne of bplist-parser to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble not in flight; installing
+193 info installOne xpc-connection@0.1.3
+194 verbose installOne of xpc-connection to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble not in flight; installing
+195 verbose lock using /Users/hectormorlet/.npm/_locks/debug-6905acd3ee696c28.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug
+196 verbose lock using /Users/hectormorlet/.npm/_locks/xpc-connection-c0469becc16b8851.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection
+197 silly install write writing debug 2.2.0 to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug
+198 verbose lock using /Users/hectormorlet/.npm/_locks/bplist-parser-802e7d7a23d15b7f.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser
+199 silly install write writing xpc-connection 0.1.3 to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection
+200 silly install write writing bplist-parser 0.0.6 to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser
+201 verbose unbuild node_modules/noble/node_modules/debug
+202 verbose unbuild node_modules/noble/node_modules/xpc-connection
+203 verbose unbuild node_modules/noble/node_modules/bplist-parser
+204 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug is being purged from base /Users/hectormorlet/Documents/Electron/Gyromin
+205 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug
+206 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection is being purged from base /Users/hectormorlet/Documents/Electron/Gyromin
+207 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection
+208 verbose tar unpack /Users/hectormorlet/.npm/debug/2.2.0/package.tgz
+209 verbose tar unpacking to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug
+210 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug is being purged
+211 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug
+212 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser is being purged from base /Users/hectormorlet/Documents/Electron/Gyromin
+213 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser
+214 verbose tar unpack /Users/hectormorlet/.npm/xpc-connection/0.1.3/package.tgz
+215 verbose tar unpacking to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection
+216 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection is being purged
+217 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection
+218 silly gunzTarPerm modes [ '755', '644' ]
+219 verbose tar unpack /Users/hectormorlet/.npm/bplist-parser/0.0.6/package.tgz
+220 verbose tar unpacking to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser
+221 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser is being purged
+222 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser
+223 silly gunzTarPerm modes [ '755', '644' ]
+224 silly gunzTarPerm modes [ '755', '644' ]
+225 silly gunzTarPerm extractEntry package.json
+226 silly gunzTarPerm extractEntry package.json
+227 silly gunzTarPerm extractEntry package.json
+228 silly gunzTarPerm extractEntry .npmignore
+229 silly gunzTarPerm extractEntry README.md
+230 silly gunzTarPerm extractEntry .npmignore
+231 silly gunzTarPerm extractEntry README.md
+232 silly gunzTarPerm extractEntry .npmignore
+233 silly gunzTarPerm extractEntry node.js
+234 silly gunzTarPerm extractEntry bplistParser.js
+235 silly gunzTarPerm modified mode [ 'bplistParser.js', 436, 420 ]
+236 silly gunzTarPerm extractEntry test/parseTest.js
+237 silly gunzTarPerm extractEntry LICENSE
+238 silly gunzTarPerm extractEntry index.js
+239 silly gunzTarPerm extractEntry debug.js
+240 silly gunzTarPerm extractEntry browser.js
+241 silly gunzTarPerm extractEntry test/airplay.bplist
+242 silly gunzTarPerm extractEntry Readme.md
+243 silly gunzTarPerm extractEntry test.js
+244 silly gunzTarPerm extractEntry binding.gyp
+245 silly gunzTarPerm extractEntry test/iTunes-small.bplist
+246 silly gunzTarPerm extractEntry test/sample1.bplist
+247 silly gunzTarPerm extractEntry src/XpcConnection.cpp
+248 silly gunzTarPerm extractEntry src/XpcConnection.h
+249 silly gunzTarPerm extractEntry bower.json
+250 silly gunzTarPerm extractEntry .jshintrc
+251 silly gunzTarPerm extractEntry component.json
+252 silly gunzTarPerm extractEntry Makefile
+253 silly gunzTarPerm extractEntry test/sample2.bplist
+254 silly gunzTarPerm extractEntry test/uid.bplist
+255 silly gunzTarPerm extractEntry History.md
+256 silly gunzTarPerm extractEntry test/utf16.bplist
+257 verbose write writing to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/package.json
+258 info preinstall xpc-connection@0.1.3
+259 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/package.json
+260 silly prepareForInstallMany adding nan@^1.7.0 from xpc-connection dependencies
+261 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/package.json
+262 silly cache add args [ 'nan@^1.7.0', null ]
+263 verbose cache add spec nan@^1.7.0
+264 silly cache add parsed spec { raw: 'nan@^1.7.0',
+264 silly cache add   scope: null,
+264 silly cache add   name: 'nan',
+264 silly cache add   rawSpec: '^1.7.0',
+264 silly cache add   spec: '>=1.7.0 <2.0.0',
+264 silly cache add   type: 'range' }
+265 silly addNamed nan@>=1.7.0 <2.0.0
+266 verbose addNamed ">=1.7.0 <2.0.0" is a valid semver range for nan
+267 silly addNameRange { name: 'nan', range: '>=1.7.0 <2.0.0', hasData: false }
+268 silly mapToRegistry name nan
+269 silly mapToRegistry using default registry
+270 silly mapToRegistry registry https://registry.npmjs.org/
+271 silly mapToRegistry uri https://registry.npmjs.org/nan
+272 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+273 verbose write writing to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/package.json
+274 verbose request uri https://registry.npmjs.org/nan
+275 verbose request no auth needed
+276 info attempt registry request try #1 at 1:58:04 PM
+277 verbose etag "CWMZR9BQ6YD6KL99MGG0CU5U5"
+278 http request GET https://registry.npmjs.org/nan
+279 info preinstall debug@2.2.0
+280 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/package.json
+281 silly prepareForInstallMany adding ms@0.7.1 from debug dependencies
+282 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/package.json
+283 silly cache add args [ 'ms@0.7.1', null ]
+284 verbose cache add spec ms@0.7.1
+285 silly cache add parsed spec { raw: 'ms@0.7.1',
+285 silly cache add   scope: null,
+285 silly cache add   name: 'ms',
+285 silly cache add   rawSpec: '0.7.1',
+285 silly cache add   spec: '0.7.1',
+285 silly cache add   type: 'version' }
+286 silly addNamed ms@0.7.1
+287 verbose addNamed "0.7.1" is a plain semver version for ms
+288 silly mapToRegistry name ms
+289 silly mapToRegistry using default registry
+290 silly mapToRegistry registry https://registry.npmjs.org/
+291 silly mapToRegistry uri https://registry.npmjs.org/ms
+292 verbose addNameVersion registry:https://registry.npmjs.org/ms not in flight; fetching
+293 verbose request uri https://registry.npmjs.org/ms
+294 verbose request no auth needed
+295 info attempt registry request try #1 at 1:58:04 PM
+296 verbose etag "53ANWMC7TJMGDP9CKLFDTWNRR"
+297 http request GET https://registry.npmjs.org/ms
+298 verbose write writing to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser/package.json
+299 info preinstall bplist-parser@0.0.6
+300 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser/package.json
+301 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser/package.json
+302 silly install resolved []
+303 verbose about to build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser
+304 info build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser
+305 info linkStuff bplist-parser@0.0.6
+306 silly linkStuff bplist-parser@0.0.6 has /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules as its parent node_modules
+307 verbose linkBins bplist-parser@0.0.6
+308 verbose linkMans bplist-parser@0.0.6
+309 verbose rebuildBundles bplist-parser@0.0.6
+310 info install bplist-parser@0.0.6
+311 info postinstall bplist-parser@0.0.6
+312 verbose unlock done using /Users/hectormorlet/.npm/_locks/bplist-parser-802e7d7a23d15b7f.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/bplist-parser
+313 http 304 https://registry.npmjs.org/nan
+314 silly get cb [ 304,
+314 silly get   { date: 'Mon, 06 Jul 2015 05:58:04 GMT',
+314 silly get     via: '1.1 varnish',
+314 silly get     'cache-control': 'max-age=60',
+314 silly get     etag: '"CWMZR9BQ6YD6KL99MGG0CU5U5"',
+314 silly get     age: '0',
+314 silly get     connection: 'keep-alive',
+314 silly get     'x-served-by': 'cache-mel6522-MEL',
+314 silly get     'x-cache': 'HIT',
+314 silly get     'x-cache-hits': '1',
+314 silly get     'x-timer': 'S1436162284.734211,VS0,VE206',
+314 silly get     vary: 'Accept' } ]
+315 verbose etag https://registry.npmjs.org/nan from cache
+316 verbose get saving nan to /Users/hectormorlet/.npm/registry.npmjs.org/nan/.cache.json
+317 silly addNameRange number 2 { name: 'nan', range: '>=1.7.0 <2.0.0', hasData: true }
+318 silly addNameRange versions [ 'nan',
+318 silly addNameRange   [ '0.3.0-wip',
+318 silly addNameRange     '0.3.0-wip2',
+318 silly addNameRange     '0.3.0',
+318 silly addNameRange     '0.3.1',
+318 silly addNameRange     '0.3.2',
+318 silly addNameRange     '0.4.0',
+318 silly addNameRange     '0.4.1',
+318 silly addNameRange     '0.4.2',
+318 silly addNameRange     '0.4.3',
+318 silly addNameRange     '0.4.4',
+318 silly addNameRange     '0.5.0',
+318 silly addNameRange     '0.5.1',
+318 silly addNameRange     '0.5.2',
+318 silly addNameRange     '0.6.0',
+318 silly addNameRange     '0.7.0',
+318 silly addNameRange     '0.7.1',
+318 silly addNameRange     '0.8.0',
+318 silly addNameRange     '1.0.0',
+318 silly addNameRange     '1.1.0',
+318 silly addNameRange     '1.1.1',
+318 silly addNameRange     '1.1.2',
+318 silly addNameRange     '1.2.0',
+318 silly addNameRange     '1.3.0',
+318 silly addNameRange     '1.4.0',
+318 silly addNameRange     '1.4.1',
+318 silly addNameRange     '1.5.0',
+318 silly addNameRange     '1.4.2',
+318 silly addNameRange     '1.4.3',
+318 silly addNameRange     '1.5.1',
+318 silly addNameRange     '1.5.2',
+318 silly addNameRange     '1.6.0',
+318 silly addNameRange     '1.5.3',
+318 silly addNameRange     '1.6.1',
+318 silly addNameRange     '1.6.2',
+318 silly addNameRange     '1.7.0',
+318 silly addNameRange     '1.8.0',
+318 silly addNameRange     '1.8.1',
+318 silly addNameRange     '1.8.2',
+318 silly addNameRange     '1.8.3',
+318 silly addNameRange     '1.8.4' ] ]
+319 silly addNamed nan@1.8.4
+320 verbose addNamed "1.8.4" is a plain semver version for nan
+321 silly cache afterAdd nan@1.8.4
+322 verbose afterAdd /Users/hectormorlet/.npm/nan/1.8.4/package/package.json not in flight; writing
+323 verbose afterAdd /Users/hectormorlet/.npm/nan/1.8.4/package/package.json written
+324 silly install resolved [ { name: 'nan',
+324 silly install resolved     version: '1.8.4',
+324 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+324 silly install resolved     main: 'include_dirs.js',
+324 silly install resolved     repository: { type: 'git', url: 'git://github.com/iojs/nan.git' },
+324 silly install resolved     scripts:
+324 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+324 silly install resolved        'rebuild-tests': 'pangyp rebuild --directory test' },
+324 silly install resolved     contributors:
+324 silly install resolved      [ [Object],
+324 silly install resolved        [Object],
+324 silly install resolved        [Object],
+324 silly install resolved        [Object],
+324 silly install resolved        [Object],
+324 silly install resolved        [Object],
+324 silly install resolved        [Object] ],
+324 silly install resolved     devDependencies:
+324 silly install resolved      { bindings: '~1.2.1',
+324 silly install resolved        'node-gyp': '~1.0.2',
+324 silly install resolved        pangyp: '~2.0.1',
+324 silly install resolved        tap: '~0.7.1',
+324 silly install resolved        xtend: '~4.0.0' },
+324 silly install resolved     license: 'MIT',
+324 silly install resolved     gitHead: 'ed3bbf4ced0cf7937b4e4164766797f71aa97f3d',
+324 silly install resolved     bugs: { url: 'https://github.com/iojs/nan/issues' },
+324 silly install resolved     homepage: 'https://github.com/iojs/nan#readme',
+324 silly install resolved     _id: 'nan@1.8.4',
+324 silly install resolved     _shasum: '3c76b5382eab33e44b758d2813ca9d92e9342f34',
+324 silly install resolved     _from: 'nan@>=1.7.0 <2.0.0',
+324 silly install resolved     _npmVersion: '2.8.3',
+324 silly install resolved     _nodeVersion: '0.12.2',
+324 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+324 silly install resolved     maintainers: [ [Object], [Object] ],
+324 silly install resolved     dist:
+324 silly install resolved      { shasum: '3c76b5382eab33e44b758d2813ca9d92e9342f34',
+324 silly install resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-1.8.4.tgz' },
+324 silly install resolved     directories: {},
+324 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-1.8.4.tgz',
+324 silly install resolved     readme: 'ERROR: No README data found!' } ]
+325 info install nan@1.8.4 into /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection
+326 info installOne nan@1.8.4
+327 verbose installOne of nan to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection not in flight; installing
+328 verbose lock using /Users/hectormorlet/.npm/_locks/nan-0cfb42f3fc7efff7.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan
+329 silly install write writing nan 1.8.4 to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan
+330 verbose unbuild node_modules/noble/node_modules/xpc-connection/node_modules/nan
+331 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan is being purged from base /Users/hectormorlet/Documents/Electron/Gyromin
+332 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan
+333 verbose tar unpack /Users/hectormorlet/.npm/nan/1.8.4/package.tgz
+334 verbose tar unpacking to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan
+335 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan is being purged
+336 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan
+337 silly gunzTarPerm modes [ '755', '644' ]
+338 silly gunzTarPerm extractEntry package.json
+339 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+340 silly gunzTarPerm extractEntry README.md
+341 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+342 silly gunzTarPerm extractEntry include_dirs.js
+343 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 420 ]
+344 silly gunzTarPerm extractEntry LICENSE.md
+345 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+346 silly gunzTarPerm extractEntry .dntrc
+347 silly gunzTarPerm modified mode [ '.dntrc', 436, 420 ]
+348 silly gunzTarPerm extractEntry appveyor.yml
+349 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 420 ]
+350 silly gunzTarPerm extractEntry nan.h
+351 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
+352 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+353 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
+354 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+355 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
+356 silly gunzTarPerm extractEntry nan_new.h
+357 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
+358 silly gunzTarPerm extractEntry nan_string_bytes.h
+359 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
+360 silly gunzTarPerm extractEntry CHANGELOG.md
+361 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+362 verbose write writing to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan/package.json
+363 info preinstall nan@1.8.4
+364 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan/package.json
+365 http 304 https://registry.npmjs.org/ms
+366 silly get cb [ 304,
+366 silly get   { date: 'Mon, 06 Jul 2015 05:58:04 GMT',
+366 silly get     via: '1.1 varnish',
+366 silly get     'cache-control': 'max-age=60',
+366 silly get     etag: '"53ANWMC7TJMGDP9CKLFDTWNRR"',
+366 silly get     age: '0',
+366 silly get     connection: 'keep-alive',
+366 silly get     'x-served-by': 'cache-mel6523-MEL',
+366 silly get     'x-cache': 'HIT',
+366 silly get     'x-cache-hits': '1',
+366 silly get     'x-timer': 'S1436162284.746420,VS0,VE238',
+366 silly get     vary: 'Accept' } ]
+367 verbose etag https://registry.npmjs.org/ms from cache
+368 verbose get saving ms to /Users/hectormorlet/.npm/registry.npmjs.org/ms/.cache.json
+369 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan/package.json
+370 silly install resolved []
+371 verbose about to build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan
+372 info build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan
+373 info linkStuff nan@1.8.4
+374 silly linkStuff nan@1.8.4 has /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules as its parent node_modules
+375 silly cache afterAdd ms@0.7.1
+376 verbose afterAdd /Users/hectormorlet/.npm/ms/0.7.1/package/package.json not in flight; writing
+377 verbose linkBins nan@1.8.4
+378 verbose linkMans nan@1.8.4
+379 verbose rebuildBundles nan@1.8.4
+380 info install nan@1.8.4
+381 info postinstall nan@1.8.4
+382 verbose afterAdd /Users/hectormorlet/.npm/ms/0.7.1/package/package.json written
+383 silly install resolved [ { name: 'ms',
+383 silly install resolved     version: '0.7.1',
+383 silly install resolved     description: 'Tiny ms conversion utility',
+383 silly install resolved     repository: { type: 'git', url: 'git://github.com/guille/ms.js.git' },
+383 silly install resolved     main: './index',
+383 silly install resolved     devDependencies: { mocha: '*', 'expect.js': '*', serve: '*' },
+383 silly install resolved     component: { scripts: [Object] },
+383 silly install resolved     gitHead: '713dcf26d9e6fd9dbc95affe7eff9783b7f1b909',
+383 silly install resolved     bugs: { url: 'https://github.com/guille/ms.js/issues' },
+383 silly install resolved     homepage: 'https://github.com/guille/ms.js',
+383 silly install resolved     _id: 'ms@0.7.1',
+383 silly install resolved     scripts: {},
+383 silly install resolved     _shasum: '9cd13c03adbff25b65effde7ce864ee952017098',
+383 silly install resolved     _from: 'ms@0.7.1',
+383 silly install resolved     _npmVersion: '2.7.5',
+383 silly install resolved     _nodeVersion: '0.12.2',
+383 silly install resolved     _npmUser: { name: 'rauchg', email: 'rauchg@gmail.com' },
+383 silly install resolved     maintainers: [ [Object] ],
+383 silly install resolved     dist:
+383 silly install resolved      { shasum: '9cd13c03adbff25b65effde7ce864ee952017098',
+383 silly install resolved        tarball: 'http://registry.npmjs.org/ms/-/ms-0.7.1.tgz' },
+383 silly install resolved     directories: {},
+383 silly install resolved     _resolved: 'https://registry.npmjs.org/ms/-/ms-0.7.1.tgz',
+383 silly install resolved     readme: 'ERROR: No README data found!' } ]
+384 info install ms@0.7.1 into /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug
+385 info installOne ms@0.7.1
+386 verbose installOne of ms to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug not in flight; installing
+387 verbose unlock done using /Users/hectormorlet/.npm/_locks/nan-0cfb42f3fc7efff7.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection/node_modules/nan
+388 verbose about to build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection
+389 info build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection
+390 verbose lock using /Users/hectormorlet/.npm/_locks/ms-75d16abd8807fd30.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms
+391 silly install write writing ms 0.7.1 to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms
+392 info linkStuff xpc-connection@0.1.3
+393 silly linkStuff xpc-connection@0.1.3 has /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules as its parent node_modules
+394 verbose unbuild node_modules/noble/node_modules/debug/node_modules/ms
+395 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms is being purged from base /Users/hectormorlet/Documents/Electron/Gyromin
+396 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms
+397 verbose tar unpack /Users/hectormorlet/.npm/ms/0.7.1/package.tgz
+398 verbose tar unpacking to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms
+399 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms is being purged
+400 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms
+401 silly gunzTarPerm modes [ '755', '644' ]
+402 verbose linkBins xpc-connection@0.1.3
+403 verbose linkMans xpc-connection@0.1.3
+404 verbose rebuildBundles xpc-connection@0.1.3
+405 verbose rebuildBundles [ 'nan' ]
+406 info install xpc-connection@0.1.3
+407 verbose unsafe-perm in lifecycle true
+408 silly gunzTarPerm extractEntry package.json
+409 silly gunzTarPerm extractEntry .npmignore
+410 silly gunzTarPerm extractEntry README.md
+411 silly gunzTarPerm extractEntry LICENSE
+412 silly gunzTarPerm extractEntry index.js
+413 silly gunzTarPerm extractEntry History.md
+414 verbose write writing to /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms/package.json
+415 info preinstall ms@0.7.1
+416 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms/package.json
+417 verbose readDependencies loading dependencies from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms/package.json
+418 silly install resolved []
+419 verbose about to build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms
+420 info build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms
+421 info linkStuff ms@0.7.1
+422 silly linkStuff ms@0.7.1 has /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules as its parent node_modules
+423 verbose linkBins ms@0.7.1
+424 verbose linkMans ms@0.7.1
+425 verbose rebuildBundles ms@0.7.1
+426 info install ms@0.7.1
+427 info postinstall ms@0.7.1
+428 verbose unlock done using /Users/hectormorlet/.npm/_locks/ms-75d16abd8807fd30.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug/node_modules/ms
+429 verbose about to build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug
+430 info build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug
+431 info linkStuff debug@2.2.0
+432 silly linkStuff debug@2.2.0 has /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules as its parent node_modules
+433 verbose linkBins debug@2.2.0
+434 verbose linkMans debug@2.2.0
+435 verbose rebuildBundles debug@2.2.0
+436 verbose rebuildBundles [ 'ms' ]
+437 info install debug@2.2.0
+438 info postinstall debug@2.2.0
+439 verbose unlock done using /Users/hectormorlet/.npm/_locks/debug-6905acd3ee696c28.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/debug
+440 info postinstall xpc-connection@0.1.3
+441 verbose unlock done using /Users/hectormorlet/.npm/_locks/xpc-connection-c0469becc16b8851.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble/node_modules/xpc-connection
+442 verbose about to build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+443 info build /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+444 info linkStuff noble@1.0.1
+445 silly linkStuff noble@1.0.1 has /Users/hectormorlet/Documents/Electron/Gyromin/node_modules as its parent node_modules
+446 verbose linkBins noble@1.0.1
+447 verbose linkMans noble@1.0.1
+448 verbose rebuildBundles noble@1.0.1
+449 verbose rebuildBundles [ 'bplist-parser', 'debug', 'xpc-connection' ]
+450 info install noble@1.0.1
+451 verbose unsafe-perm in lifecycle true
+452 info noble@1.0.1 Failed to exec install script
+453 verbose unlock done using /Users/hectormorlet/.npm/_locks/noble-62a4f3939d2eb35b.lock for /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+454 verbose stack Error: noble@1.0.1 install: `node-gyp rebuild`
+454 verbose stack Exit status 1
+454 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+454 verbose stack     at EventEmitter.emit (events.js:110:17)
+454 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+454 verbose stack     at ChildProcess.emit (events.js:110:17)
+454 verbose stack     at maybeClose (child_process.js:1015:16)
+454 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+455 verbose pkgid noble@1.0.1
+456 verbose cwd /Users/hectormorlet/Documents/Electron/Gyromin
+457 error Darwin 14.3.0
+458 error argv "node" "/usr/local/bin/npm" "install" "noble"
+459 error node v0.12.6
+460 error npm  v2.11.2
+461 error code ELIFECYCLE
+462 error noble@1.0.1 install: `node-gyp rebuild`
+462 error Exit status 1
+463 error Failed at the noble@1.0.1 install script 'node-gyp rebuild'.
+463 error This is most likely a problem with the noble package,
+463 error not with npm itself.
+463 error Tell the author that this fails on your system:
+463 error     node-gyp rebuild
+463 error You can get their info via:
+463 error     npm owner ls noble
+463 error There is likely additional logging output above.
+464 verbose exit [ 1, true ]
+465 verbose unbuild node_modules/noble
+466 info preuninstall noble@1.0.1
+467 info uninstall noble@1.0.1
+468 verbose unbuild rmStuff noble@1.0.1 from /Users/hectormorlet/Documents/Electron/Gyromin/node_modules
+469 info postuninstall noble@1.0.1
+470 silly gentlyRm /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble is being purged from base /Users/hectormorlet/Documents/Electron/Gyromin
+471 verbose gentlyRm don't care about contents; nuking /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+472 silly vacuum-fs purging /Users/hectormorlet/Documents/Electron/Gyromin/node_modules/noble
+473 silly vacuum-fs removing /Users/hectormorlet/Documents/Electron/Gyromin/node_modules
+474 silly vacuum-fs finished vacuuming up to /Users/hectormorlet/Documents/Electron/Gyromin
