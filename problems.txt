@@ -1,0 +1,4 @@
+Problems
+
+- Cant use gatt due to the library not supporting the bluno protocol
+- Have to create NSApplication to be able to use use the bluetooth capabilities from Go
