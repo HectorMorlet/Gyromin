@@ -1,0 +1,9 @@
+Resources
+----------------------------------------------------------------
+
+Calling obj-c in Go: https://gist.github.com/kavu/6740536
+Bluno reference code: https://github.com/DFRobot/BlunoBasicDemo
+
+Sample code for using the gyroscope: http://www.dfrobot.com/wiki/index.php/6_DOF_Sensor-MPU6050_(SKU:SEN0142)
+The Wire library: http://arduino.cc/en/reference/wire
+The I2C library: https://github.com/jrowberg/i2cdevlib

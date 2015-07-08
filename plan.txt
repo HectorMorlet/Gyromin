@@ -1,0 +1,18 @@
+Plan
+----------------------------------------------------------------
+
+- Bluetooth -> Objective-C -> Go
+ - Write bindings to call + recieve objective c functions
+- Go -> Browser
+ - Use sockets.io - real time communication between server + browser
+- Browser -> Rendering
+ - Play sounds
+  - Convert one angle to pitch
+  - Convert one angle to volume
+ - Settings
+  - Instrument
+ Later:
+ - Record
+  - Sound
+  - Or into sheet music
+  - Layers of recordings
