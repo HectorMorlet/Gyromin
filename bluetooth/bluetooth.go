@@ -5,32 +5,21 @@ package bluetooth
 #cgo LDFLAGS: -framework Cocoa -framework Foundation -framework IOBluetooth
 
 #import <Cocoa/Cocoa.h>
-#import "QCBluetooth.h"
 
-@interface Binding : NSObject <QCBluetoothDelegate>
-
-- (void)BlehWorld;
-
-@end
-
-@implementation Binding
-
-- (void)BlehWorld {
-	NSLog(@"Hello world!");
-}
-
-@end
-
-Binding *myTest = NULL;
-
-int HelloWorld(void) {
-	myTest = [[Binding alloc] init];
-    [myTest BlehWorld];
-    return 0;
-}
+extern void Connect();
 */
 import "C"
 
 func Run() {
-	C.HelloWorld()
+	C.Connect()
+}
+
+//export HasConnected
+func HasConnected() {
+	println("Go: Connected!")
+}
+
+//export ReceivedData
+func ReceivedData(message *C.char) {
+	println("Received: " + C.GoString(message))
 }
