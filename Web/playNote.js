@@ -16,7 +16,7 @@ playNote(convertAngles(40, 0), 1000);
 function createNotes() {
 	notes = [];
 	for (i = 0; i < NUM_NOTES; i++) {
-		notes[i] = new Audio("notes/" + i.toString() + ".wav");
+		notes[i] = new Audio("Notes/" + i.toString() + ".wav");
 	}
 }
 
