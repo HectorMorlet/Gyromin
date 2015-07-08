@@ -1,8 +1,9 @@
 package bluetooth
 
 /*
-#cgo CFLAGS: -x objective-c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc
-#cgo LDFLAGS: -framework Cocoa -v
+#cgo CFLAGS: -x objective-c -fobjc-arc
+#cgo LDFLAGS: -framework Cocoa -framework Foundation -framework IOBluetooth
+
 #import <Cocoa/Cocoa.h>
 #import "QCBluetooth.h"
 

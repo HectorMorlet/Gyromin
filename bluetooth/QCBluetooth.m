@@ -26,15 +26,12 @@
 @implementation QCBluetooth
 
 
-#pragma mark - Initialisation
-
-
 - (id)init
 {
 	self = [super init];
 	if (self) {
 		self.bluetoothIsSupported = NO;
-		
+
 		self.manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
 		self.connectedDevice = nil;
 	}
@@ -57,7 +54,7 @@
 	if (self.bluetoothIsSupported) {
 		[self stopScanning];
 		[self.manager scanForPeripheralsWithServices:nil options:nil];
-		
+
 		NSLog(@"Scanning...");
 	}
 }
@@ -75,9 +72,9 @@
 {
 	if (self.bluetoothIsSupported && !self.isConnectedToDevice) {
 		NSLog(@"Connecting to device: %@...", device.peripheral.name);
-		
+
 		[self disconnectFromDevice];
-		
+
 		self.connectedDevice = device;
 		[self.manager connectPeripheral:device.peripheral options:nil];
 	}
@@ -88,7 +85,7 @@
 {
 	if (self.bluetoothIsSupported && self.isConnectedToDevice) {
 		CBCharacteristic *characteristic = nil;
-		
+
 		for (CBService *service in self.connectedDevice.peripheral.services) {
 			if ([service.UUID isEqualTo:[CBUUID UUIDWithString:BLUNO_SERVICE_UUID]]) {
 				for (CBCharacteristic *c in service.characteristics) {
@@ -97,11 +94,11 @@
 						break;
 					}
 				}
-				
+
 				break;
 			}
 		}
-		
+
 		NSLog(@"Cancelling peripheral connection...");
 		[self.connectedDevice.peripheral setNotifyValue:NO forCharacteristic:characteristic];
 		[self.manager cancelPeripheralConnection:self.connectedDevice.peripheral];
@@ -118,26 +115,26 @@
 {
 	if (self.bluetoothIsSupported && self.isConnectedToDevice) {
 		CBCharacteristic *characteristic = nil;
-		
+
 		// Find the correct characteristic
 		for (CBService *service in self.connectedDevice.peripheral.services) {
 //			NSLog(@"Found Service: %@", service.UUID.description);
-			
+
 			if ([service.UUID isEqual:[CBUUID UUIDWithString:BLUNO_SERVICE_UUID]]) {
 				for (CBCharacteristic *potential in service.characteristics) {
 //					NSLog(@"Found characteristic: %@", potential.UUID.description);
-					
+
 					if ([potential.UUID isEqual:[CBUUID UUIDWithString:BLUNO_CHARACTERISTIC_UUID]]) {
 //						NSLog(@"Found characteristic");
 						characteristic = potential;
 						break;
 					}
 				}
-				
+
 				break;
 			}
 		}
-		
+
 		if (characteristic) {
 //			NSLog(@"Writing message to characteristic");
 			[self.connectedDevice.peripheral writeValue:[message dataUsingEncoding:NSUTF8StringEncoding]
@@ -159,7 +156,7 @@
 	if (central.state == CBCentralManagerStatePoweredOn) {
 		self.bluetoothIsSupported = YES;
 	}
-	
+
 	if (self.delegate && [self.delegate respondsToSelector:@selector(bluetoothIsReadyWithSupport:)]) {
 		[self.delegate bluetoothIsReadyWithSupport:self.bluetoothIsSupported];
 	}
@@ -174,7 +171,7 @@
 	if (peripheral.name && self.delegate && [self.delegate respondsToSelector:@selector(didDiscoverDevice:)]) {
 		QCDevice *device = [[QCDevice alloc] init];
 		device.peripheral = peripheral;
-		
+
 		[self.delegate didDiscoverDevice:device];
 	}
 }
@@ -185,7 +182,7 @@
 {
 	self.connectedDevice.peripheral.delegate = self;
 	[self.connectedDevice.peripheral discoverServices:@[[CBUUID UUIDWithString:BLUNO_SERVICE_UUID]]];
-	
+
 	if (self.delegate && [self.delegate respondsToSelector:@selector(didConnectToDevice:)]) {
 		[self.delegate didConnectToDevice:self.connectedDevice];
 	}
@@ -199,7 +196,7 @@ didDisconnectPeripheral:(CBPeripheral *)peripheral
 	if (self.delegate && [self.delegate respondsToSelector:@selector(didDisconnectFromDevice:)]) {
 		[self.delegate didDisconnectFromDevice:self.connectedDevice];
 	}
-	
+
 //	self.connectedDevice = nil;
 }
 
@@ -212,7 +209,7 @@ didFailToConnectPeripheral:(CBPeripheral *)peripheral
 	if (self.delegate && [self.delegate respondsToSelector:@selector(didDisconnectFromDevice:)]) {
 		[self.delegate didDisconnectFromDevice:self.connectedDevice];
 	}
-	
+
 	self.connectedDevice = nil;
 }
 
@@ -239,7 +236,7 @@ didFailToConnectPeripheral:(CBPeripheral *)peripheral
 	if ([service.UUID isEqual:[CBUUID UUIDWithString:BLUNO_SERVICE_UUID]]) {
 		for (CBCharacteristic *characteristic in service.characteristics) {
 //			NSLog(@"Did discover characteristic: %@", characteristic.UUID.description);
-			
+
 			if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:BLUNO_CHARACTERISTIC_UUID]]) {
 				[peripheral setNotifyValue:YES forCharacteristic:characteristic];
 				NSLog(@"Discovered Bluno characteristics.");
