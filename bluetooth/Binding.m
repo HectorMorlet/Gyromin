@@ -20,7 +20,6 @@
 }
 
 - (void)didDiscoverDevice:(DFBlunoDevice *)dev {
-	NSLog(@"Trying to connect");
 	NSLog(@"I found: %@", dev.name);
 	NSLog(@"Trying to connect");
 	[self.bluetoothDevice connectToDevice:dev];
@@ -39,7 +38,12 @@
 }
 
 - (void)didReceiveData:(NSData *)data Device:(DFBlunoDevice *)dev {
-
+	NSString* receivedData = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+	NSLog(@"Received data: %@", receivedData);
+	const char *c = [receivedData UTF8String];
+	char *cpy = calloc([receivedData length]+1, 1);
+	strncpy(cpy, c, [receivedData length]);
+	ReceivedData(cpy);
 }
 
 - (void)bleDidUpdateState:(BOOL)bleSupported {
