@@ -26,11 +26,15 @@
 }
 
 - (void)didDisconnectDevice:(DFBlunoDevice *)dev {
-    NSLog(@"Disconnected from device :(");
+	NSLog(@"Disconnected from device :(");
 }
 
 - (void)readyToCommunicate:(DFBlunoDevice *)dev {
 	NSLog(@"Device ready to communicate");
+	NSString* stringTransmission = @"hello";
+	NSData* transmission = [stringTransmission dataUsingEncoding:NSASCIIStringEncoding];
+	NSLog(@"Sending: %@", stringTransmission);
+	[self.bluetoothDevice writeDataToDevice:transmission Device:dev];
 }
 
 - (void)didWriteData:(DFBlunoDevice *)dev {

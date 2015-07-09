@@ -1,7 +1,7 @@
 package bluetooth
 
 /*
-#cgo CFLAGS: -x objective-c -fobjc-arc
+#cgo CFLAGS: -x objective-c -fobjc-arc -g
 #cgo LDFLAGS: -framework Cocoa -framework Foundation -framework IOBluetooth
 
 #import <Cocoa/Cocoa.h>
