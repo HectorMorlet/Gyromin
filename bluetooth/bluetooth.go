@@ -10,9 +10,11 @@ extern void Connect();
 */
 import "C"
 
-func Run() {
+func RunBluetooth() {
 	C.Connect()
 }
+
+var DataSubscription (chan string) = make(chan string)
 
 //export HasConnected
 func HasConnected() {
@@ -22,4 +24,7 @@ func HasConnected() {
 //export ReceivedData
 func ReceivedData(message *C.char) {
 	println("Received: " + C.GoString(message))
+	go func() {
+		DataSubscription <- C.GoString(message)
+	}()
 }
