@@ -4,64 +4,51 @@
 
 @interface Binding ()
 
-@property (strong) QCBluetooth *bluetooth;
+@property DFBlunoManager *bluetoothDevice;
 - (void)Connect;
 
 @end
 
 @implementation Binding
 
-- (void)applicationDidFinishLaunching:(NSNotification *)notification
-{
-	NSLog(@"Launch");
-}
-
 - (void)Connect {
-	self.bluetooth = [[QCBluetooth alloc] init];
-	self.bluetooth.delegate = self;
+	self.bluetoothDevice = [DFBlunoManager sharedInstance];
+	self.bluetoothDevice.delegate = self;
 	NSLog(@"Wanting to connect...");
 	dispatch_main();
 	NSLog(@"Exiting...");
 }
 
-- (void)bluetoothIsReadyWithSupport:(BOOL)support {
-	NSLog(@"Bluetooth ready. Supported: %i", support);
-	[self.bluetooth beginScanning];
+- (void)didDiscoverDevice:(DFBlunoDevice *)dev {
+	NSLog(@"Trying to connect");
+	NSLog(@"I found: %@", dev.name);
+	NSLog(@"Trying to connect");
+	[self.bluetoothDevice connectToDevice:dev];
 }
 
+- (void)didDisconnectDevice:(DFBlunoDevice *)dev {
+    NSLog(@"Disconnected from device :(");
+}
 
-- (void)didDiscoverDevice:(QCDevice *)device {
-	NSLog(@"Discovered device: %@", device.peripheral.name);
+- (void)readyToCommunicate:(DFBlunoDevice *)dev {
+	NSLog(@"Device ready to communicate");
+}
 
-	if (!self.bluetooth.isConnectedToDevice && [device.peripheral.name isEqualToString:@"BlunoV1.8"]) {
-		[self.bluetooth connectToDevice:device];
+- (void)didWriteData:(DFBlunoDevice *)dev {
+	NSLog(@"Data written to device");
+}
+
+- (void)didReceiveData:(NSData *)data Device:(DFBlunoDevice *)dev {
+
+}
+
+- (void)bleDidUpdateState:(BOOL)bleSupported {
+	if (bleSupported) {
+		NSLog(@"BLE support is okay! Scanning...");
+		[self.bluetoothDevice scan];
+	} else {
+		NSLog(@"BLE support not okay :(");
 	}
-}
-
-
-- (void)didConnectToDevice:(QCDevice *)device {
-	NSLog(@"Connected to device: %@", device.peripheral.name);
-	HasConnected();
-}
-
-
-- (void)didDisconnectFromDevice:(QCDevice *)device {
-	NSLog(@"Disconnected from device: %@", device.peripheral.name);
-}
-
-
-- (void)didSendData:(NSString *)message {
-	NSLog(@"Sent: %@", message);
-}
-
-
-- (void)didReceiveData:(NSString *)message {
-	NSLog(@"Received: %@", message);
-	const char *c = [message UTF8String];
-	char *cpy = calloc([message length]+1, 1);
-	strncpy(cpy, c, [message length]);
-	ReceivedData(cpy);
-	free(cpy);
 }
 
 @end
@@ -70,5 +57,5 @@ Binding *binding = NULL;
 
 void Connect(void) {
 	binding = [[Binding alloc] init];
-    [binding Connect];
+	[binding Connect];
 }

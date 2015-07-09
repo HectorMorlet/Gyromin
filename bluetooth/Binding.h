@@ -1,8 +1,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "QCBluetooth.h"
+#import "DFBlunoManager.h"
 
-@interface Binding : NSObject <NSApplicationDelegate, QCBluetoothDelegate>
+@interface Binding : NSObject <DFBlunoDelegate>
 
 @end
