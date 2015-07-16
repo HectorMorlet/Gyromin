@@ -131,4 +131,6 @@
 [""] */
 - (void)writeDataToDevice:(NSData*)data Device:(DFBlunoDevice*)dev;
 
+- (void)readDataFromDevice:(DFBlunoDevice*)dev;
+
 @end

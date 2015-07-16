@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreBluetooth/CoreBluetooth.h>
+#import <IOBluetooth/IOBluetooth.h>
 
 
 @interface BLEDevice : NSObject

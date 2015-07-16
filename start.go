@@ -2,15 +2,14 @@ package main
 
 import (
 	"github.com/googollee/go-socket.io"
-	"gyromin/bluetooth"
+	// "gyromin/bluetooth"
+	"gyromin/serial"
 	"log"
 	"net/http"
 )
 
 func main() {
-	go func() {
-		bluetooth.RunBluetooth()
-	}()
+	serial.RunService()
 
 	server, err := socketio.NewServer(nil)
 	if err != nil {
@@ -32,8 +31,18 @@ func main() {
 
 	go func() {
 		for {
-			receivedData := <-bluetooth.DataSubscription
-			server.BroadcastTo("gyroscope-data", "gyroscope", receivedData)
+			result := <-serial.DataSubscription
+			// log.Println(result[0], result[1], result[2])
+			server.BroadcastTo("gyroscope-data", "gyroscope",
+				result[0], result[1], result[2])
+		}
+	}()
+
+	go func() {
+		for {
+			err := <-serial.ErrorSubscription
+			log.Println(err)
+			server.BroadcastTo("gyroscope-data", "read-error", err)
 		}
 	}()
 	log.Fatal(http.ListenAndServe(":9000", nil))

@@ -28,7 +28,7 @@
 + (id)sharedInstance
 {
 	static DFBlunoManager* this	= nil;
-    
+
 	if (!this)
     {
 		this = [[DFBlunoManager alloc] init];
@@ -37,17 +37,17 @@
         this->_bSupported = NO;
         this.centralManager = [[CBCentralManager alloc]initWithDelegate:this queue:nil];
     }
-    
+
 	return this;
 }
 
 - (void)configureSensorTag:(CBPeripheral*)peripheral
 {
-    
-    CBUUID *sUUID = [CBUUID UUIDWithString:kBlunoService];
-    CBUUID *cUUID = [CBUUID UUIDWithString:kBlunoDataCharacteristic];
-    
-    [BLEUtility setNotificationForCharacteristic:peripheral sCBUUID:sUUID cCBUUID:cUUID enable:YES];
+
+    // CBUUID *sUUID = [CBUUID UUIDWithString:kBlunoService];
+    // CBUUID *cUUID = [CBUUID UUIDWithString:kBlunoDataCharacteristic];
+
+    // [BLEUtility setNotificationForCharacteristic:peripheral sCBUUID:sUUID cCBUUID:cUUID enable:YES];
     NSString* key = [peripheral.identifier UUIDString];
     DFBlunoDevice* blunoDev = [self.dicBlunoDevices objectForKey:key];
     blunoDev->_bReadyToWrite = YES;
@@ -55,17 +55,17 @@
     {
         [_delegate readyToCommunicate:blunoDev];
     }
-    
+
 }
 
 - (void)deConfigureSensorTag:(CBPeripheral*)peripheral
 {
-    
+
     CBUUID *sUUID = [CBUUID UUIDWithString:kBlunoService];
     CBUUID *cUUID = [CBUUID UUIDWithString:kBlunoDataCharacteristic];
-    
+
     [BLEUtility setNotificationForCharacteristic:peripheral sCBUUID:sUUID cCBUUID:cUUID enable:NO];
-    
+
 }
 
 - (void)scan
@@ -118,6 +118,23 @@
     [BLEUtility writeCharacteristic:bleDev.peripheral sUUID:kBlunoService cUUID:kBlunoDataCharacteristic data:data];
 }
 
+- (void)readDataFromDevice:(DFBlunoDevice*) dev {
+	BLEDevice* bleDev = [self.dicBleDevices objectForKey:dev.identifier];
+
+	for ( CBService *service in bleDev.peripheral.services ) {
+        if ([service.UUID isEqual:[CBUUID UUIDWithString:kBlunoService]]) {
+            for (CBCharacteristic *characteristic in service.characteristics ) {
+                if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:kBlunoDataCharacteristic]])
+                {
+                    [bleDev.peripheral readValueForCharacteristic:characteristic];
+                }
+
+            }
+        }
+    }
+}
+
+
 #pragma mark - CBCentralManager delegate
 
 -(void)centralManagerDidUpdateState:(CBCentralManager *)central
@@ -131,19 +148,19 @@
             DFBlunoDevice* blunoDev = [self.dicBlunoDevices objectForKey:strKey];
             blunoDev->_bReadyToWrite = NO;
         }
-        
+
     }
     else
     {
         _bSupported = YES;
-        
+
     }
-    
+
     if ([((NSObject*)_delegate) respondsToSelector:@selector(bleDidUpdateState:)])
     {
         [_delegate bleDidUpdateState:_bSupported];
     }
-    
+
 }
 
 -(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
@@ -201,13 +218,28 @@
 #pragma  mark - CBPeripheral delegate
 -(void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
 {
-    for (CBService *s in peripheral.services) [peripheral discoverCharacteristics:nil forService:s];
+    for (CBService *s in peripheral.services) [peripheral discoverCharacteristics:
+    	@[
+    		[CBUUID UUIDWithString:kBlunoDataCharacteristic]
+    	] forService:s];
 }
 
 -(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
 {
+	NSLog(@" discover error => %@ ", [error userInfo] );
     if ([service.UUID isEqual:[CBUUID UUIDWithString:kBlunoService]])
     {
+        for (CBCharacteristic *characteristic in service.characteristics) {
+	        if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:kBlunoDataCharacteristic]]) {
+	        	if ((characteristic.properties & CBCharacteristicPropertyNotify) &&
+	        	(characteristic.properties & CBCharacteristicPropertyRead) &&
+	        	(characteristic.properties & CBCharacteristicPropertyWrite)) {
+		            [peripheral setNotifyValue:YES forCharacteristic:characteristic];
+		            NSLog(@"Notifying...");
+		        }
+	        }
+        }
+
         [self configureSensorTag:peripheral];
     }
 
@@ -216,13 +248,14 @@
 
 -(void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    
-    
+     NSLog(@" update notification error => %@ ", [error userInfo] );
+
 }
 
 -(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    
+	NSLog(@" update value error => %@ ", [error userInfo] );
+
     if ([((NSObject*)_delegate) respondsToSelector:@selector(didReceiveData:Device:)])
     {
         NSString* key = [peripheral.identifier UUIDString];
@@ -233,13 +266,14 @@
 
 -(void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
+	NSLog(@" write error => %@ ", [error userInfo] );
     if ([((NSObject*)_delegate) respondsToSelector:@selector(didWriteData:)])
     {
         NSString* key = [peripheral.identifier UUIDString];
         DFBlunoDevice* blunoDev = [self.dicBlunoDevices objectForKey:key];
         [_delegate didWriteData:blunoDev];
     }
-    
+
 }
 
 @end

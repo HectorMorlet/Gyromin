@@ -16,7 +16,7 @@
             for ( CBCharacteristic *characteristic in service.characteristics ) {
                 if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:cUUID]]) {
                     [peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
-                    
+
                 }
             }
         }
@@ -29,7 +29,7 @@
             for ( CBCharacteristic *characteristic in service.characteristics ) {
                 if ([characteristic.UUID isEqual:cCBUUID]) {
                     [peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
-                    
+
                 }
             }
         }
@@ -68,9 +68,9 @@
                 if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:cUUID]])
                 {
                     [peripheral setNotifyValue:enable forCharacteristic:characteristic];
-                    
+
                 }
-                
+
             }
         }
     }
@@ -83,9 +83,8 @@
                 if ([characteristic.UUID isEqual:cCBUUID])
                 {
                     [peripheral setNotifyValue:enable forCharacteristic:characteristic];
-                    
                 }
-                
+
             }
         }
     }
@@ -101,11 +100,11 @@
                     if (characteristic.properties & CBCharacteristicPropertyNotify) return YES;
                     else return NO;
                 }
-                
+
             }
         }
     }
     return NO;
 }
-  
+
 @end
